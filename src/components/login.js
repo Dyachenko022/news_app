@@ -26,6 +26,7 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         apiPost.post('/auth/sign_in', {email: email, password: password}).then(response => {
+            console.log(response.status)
             console.log(response.headers)
            dispatch(login({
                 accessToken:response.headers['access-token'],
