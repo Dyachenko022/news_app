@@ -1,0 +1,48 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    font-family: "Inter";
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginForm > h1 {
+    display: flex;
+    flex-direction: row;
+    color: purple;
+    justify-content: center;
+    font-family:-apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 35px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.loginForm > input {
+    min-width: 380px;
+    padding: 20px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    outline: none;
+    border: 1px solid rgba (0, 0, 0, 0.24);
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 2px;
+    font-size: 15px;
+}
+
+.loginButton {
+    padding: 17px 30px;
+    margin-top: 10px;
+    background: black;
+    border: none;
+    color: rgb(236, 236, 236);;
+    font-size: 14px;
+    font-family:-apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 3px;
+}
