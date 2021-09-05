@@ -3,10 +3,8 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 import axios from "axios";
 import { login } from '../features/userSlice';
-import store from '../app/Store';
 import './login.css';
 import { Alert, CloseButton } from 'react-bootstrap';
-import { Button } from 'bootstrap';
 const Login = () => {
 
     //компонент, отвечающий за авторизацию. Единственное- так и не смог пофиксить проблему с неприходящими хедерами. При разработке пользовался обходными путями
@@ -20,9 +18,14 @@ const Login = () => {
     const dispatch = useDispatch()
     const history = useHistory();
 
+    const apiPost = axios.create({
+        baseURL: 'http://lzone.isfb.ru/api/v2',
+        timeout: 3000,
+    })
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://lzone.isfb.ru/api/v2/auth/sign_in', {email: email, password: password}).then(response => {
+        apiPost.post('/auth/sign_in', {email: email, password: password}).then(response => {
             console.log(response.headers)
            dispatch(login({
                 accessToken:response.headers['access-token'],
